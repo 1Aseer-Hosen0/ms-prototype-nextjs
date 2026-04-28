@@ -169,3 +169,128 @@
 .animate-fadeIn {
   animation: fadeIn 0.35s ease;
 }
+
+/* 404 Page Styles */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes numAppear {
+  from {
+    opacity: 0;
+    letter-spacing: 0.1em;
+  }
+  to {
+    opacity: 1;
+    letter-spacing: -0.06em;
+  }
+}
+
+@keyframes lineSlide {
+  from {
+    width: 0%;
+    opacity: 0;
+    left: 50%;
+  }
+  to {
+    width: 105%;
+    opacity: 1;
+    left: -2.5%;
+  }
+}
+
+@keyframes innerFloat {
+  0%,
+  100% {
+    transform: translate(-50%, -48%) translateY(0) rotate(-3deg);
+  }
+  50% {
+    transform: translate(-50%, -48%) translateY(-10px) rotate(3deg);
+  }
+}
+
+.animate-fadeUp {
+  animation: fadeUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.animation-delay-100 {
+  animation-delay: 0.1s;
+}
+
+.animation-delay-300 {
+  animation-delay: 0.3s;
+}
+
+.animation-delay-400 {
+  animation-delay: 0.4s;
+}
+
+.animation-delay-500 {
+  animation-delay: 0.5s;
+}
+
+.animation-delay-600 {
+  animation-delay: 0.6s;
+}
+
+.animation-delay-700 {
+  animation-delay: 0.7s;
+}
+
+.animation-delay-750 {
+  animation-delay: 0.75s;
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(13, 31, 60, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(13, 31, 60, 0.08) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+.bg-grid::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 70% at 50% 50%, transparent 30%, var(--color-soft) 100%);
+}
+
+.dark .bg-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+}
+
+.dark .bg-grid::after {
+  background: radial-gradient(ellipse 70% 70% at 50% 50%, transparent 30%, rgb(15, 23, 42) 100%);
+}
+
+.font-serif {
+  font-family: 'Fraunces', serif;
+}
+
+/* Color system */
+:root {
+  --color-navy: #0D1F3C;
+  --color-white: #FFFFFF;
+  --color-soft: #EEF2F7;
+  --color-blue: #1E4D8C;
+  --color-accent: #3B82C4;
+  --color-accent-l: #EBF3FB;
+}
+
+.dark {
+  --color-navy: #E8EFF9;
+  --color-white: #0A0F1A;
+  --color-soft: #151F31;
+  --color-blue: #5B9BD5;
+  --color-accent: #5B9BD5;
+  --color-accent-l: rgba(91, 155, 213, 0.12);
+}
