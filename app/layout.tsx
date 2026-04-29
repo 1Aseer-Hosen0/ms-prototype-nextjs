@@ -1,24 +1,32 @@
 import type { Metadata } from 'next'
-import { DM_Sans, Fraunces } from 'next/font/google'
+import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-const dmSans = DM_Sans({
-  subsets: ['latin'],
-  variable: '--font-dm-sans',
-  weight: ['300', '400', '500'],
-})
-
-const fraunces = Fraunces({
-  subsets: ['latin'],
-  variable: '--font-fraunces',
-  weight: ['300', '400', '600'],
-  style: ['normal', 'italic'],
-})
+const _geist = Geist({ subsets: ["latin"] });
+const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Mindsphere — Teens for teens, you are not alone',
-  description: 'A supportive mental health community for teens. You are not alone.',
+  title: 'Mindsphere — Mental Health Community',
+  description: 'Sign in to your Mindsphere account or create a new account to access your personal mental health tools and supportive community.',
+  generator: 'v0.app',
+  icons: {
+    icon: [
+      {
+        url: '/icon-light-32x32.png',
+        media: '(prefers-color-scheme: light)',
+      },
+      {
+        url: '/icon-dark-32x32.png',
+        media: '(prefers-color-scheme: dark)',
+      },
+      {
+        url: '/icon.svg',
+        type: 'image/svg+xml',
+      },
+    ],
+    apple: '/apple-icon.png',
+  },
 }
 
 export default function RootLayout({
@@ -27,8 +35,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${dmSans.variable} ${fraunces.variable}`}>
-      <body className="font-sans antialiased bg-[var(--white)] text-[var(--text-primary)] overflow-x-hidden leading-relaxed">
+    <html lang="en" className="bg-[#F3F6FB]">
+      <body className="font-sans antialiased bg-[#F3F6FB]">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
