@@ -1,11 +1,5 @@
-import Navbar from '@/components/home/Navbar'
-import Hero from '@/components/home/Hero'
+import { redirect } from 'next/navigation';
 
 export default function Home() {
-  return (
-    <div className="bg-white">
-      <Navbar />
-      <Hero />
-    </div>
-  )
+  redirect('/login');
 }
